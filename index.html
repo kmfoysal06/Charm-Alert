@@ -17,6 +17,21 @@
             align-items: center;
             flex-direction: column;
         }
+      .header {
+        max-inline-size: 1080px;
+        margin: 0 auto;
+        text-align: right;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 6px;
+        position: sticky;
+        top: 0;
+      }
+      .header a {
+        text-decoration: none;
+      }
+      .header a:hover {
+        text-decoration: underline;
+      }
         button {
             cursor: pointer;
             padding: 10px 20px;
@@ -46,13 +61,16 @@
     </style>
 </head>
 <body>
+   <div class="header">
+        <a href="https://github.com/kmfoysal06/Charm-Alert" target="_blank" />Source/Contribute</a>
+    </div>
     <div class="container">
         <h3>A Great Alert That Better Than Yours</h3>
         <p>Some Lorum Text That You Don't Care About</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nihil aliquam, dolor similique modi labore ipsam natus ipsa animi, magnam perspiciatis! Ea numquam facilis corporis laudantium velit, eum incidunt distinctio praesentium earum porro laboriosam est aut debitis minima error omnis, architecto ullam aspernatur, odit id explicabo facere quisquam molestiae. Perspiciatis.</p>
         <div class="button-group">
             <button class="btn-1">Click Me</button>
-            <button class="btn-2">Click Me</button>
+            <button class="btn-2">Don't Click Me</button>
         </div>
         
     </div>
