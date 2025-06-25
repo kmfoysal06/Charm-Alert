@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A HTML Site Better Than Yours</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-inline-size: 1080px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        .copiable-code {
+            background-color: #fff;
+            padding: 0 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+        }
+        .copy {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>A Great Alert That Better Than Yours</h3>
+        <p>Some Lorum Text That You Don't Care About</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nihil aliquam, dolor similique modi labore ipsam natus ipsa animi, magnam perspiciatis! Ea numquam facilis corporis laudantium velit, eum incidunt distinctio praesentium earum porro laboriosam est aut debitis minima error omnis, architecto ullam aspernatur, odit id explicabo facere quisquam molestiae. Perspiciatis.</p>
+        <div class="button-group">
+            <button class="btn-1">Click Me</button>
+            <button class="btn-2">Click Me</button>
+        </div>
+        
+    </div>
+    <div class="container">
+        <h3>Get Started</h3>
+        <div class="copiable-code">
+            <div class="copy">copy</div>
+            <pre>
+                <code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title>A HTML Site Better Than Yours&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                <!-- js code  -->
+                    &lt;script src="charm-alert.js"&gt;&lt;/script&gt;
+                    &lt;script&gt;
+                        const charmAlert = new CharmAlert();
+                        const button = document.querySelector('button');
+                        button.addEventListener('click', () => {
+                            charmAlert.showAlert('This is a charm alert!', 'success');
+                        });
+                    &lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </code>
+            </pre>
+    
+        </div>
+    </div>
+    <script src="charm-alert.js"></script>
+    <script>
+        const charmAlert = new CharmAlert();
+        const button1 = document.querySelector('.btn-1');
+        const button2 = document.querySelector('.btn-2');
+        button1.addEventListener('click', () => {
+            charmAlert.showAlert('This is a charm alert!', 'success');
+        });
+        button2.addEventListener('click', () => {
+            charmAlert.showAlert('This is a charm alert buton you made a mistake!', 'error');
+        });
+        document.querySelector('.copy').addEventListener('click', () => {
+            const code = document.querySelector('pre code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                charmAlert.showAlert('Code copied to clipboard!', 'success');
+            }).catch(err => {
+                charmAlert.showAlert('Failed to copy code!', 'error');
+            });
+        });
+    </script>
+</body>
+</html>
